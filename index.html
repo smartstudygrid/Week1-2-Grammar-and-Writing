@@ -4,17 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grade 9 English Masterclass: Nouns, Pronouns & Narrative Dialogue</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti CDN -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
+
     .tab-btn.active {
-      border-bottom: 3px solid #3b82f6;
+      border-bottom: 3px solid #2563eb;
       color: #1d4ed8;
       font-weight: 700;
+    }
+
+    /* Custom Scrollbar for smooth navigation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @media print {
+      @page {
+        size: portrait;
+        margin: 0.35in;
+      }
+
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10.5pt !important;
+        line-height: 1.25 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* Hide header, navigation tabs, footers, interactive elements, and non-printable elements */
+      header, nav, footer, .no-print, button, input, textarea {
+        display: none !important;
+      }
+
+      /* Ensure main container occupies full printable page */
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      /* STANDARD REPORT CARD PRINT MODE: Fits strictly on 1 page in portrait */
+      body:not(.print-writing-only) section {
+        display: none !important;
+      }
+
+      body:not(.print-writing-only) #section-results {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        page-break-after: avoid !important;
+      }
+
+      /* Compact printable cards & tables */
+      .print-compact-card {
+        padding: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+        border-radius: 0.375rem !important;
+      }
+
+      .print-title {
+        font-size: 1.25rem !important;
+      }
+
+      .print-subtitle {
+        font-size: 0.75rem !important;
+      }
+
+      table {
+        font-size: 9pt !important;
+      }
+
+      td, th {
+        padding: 4px 8px !important;
+      }
+
+      /* WRITING TASK ONLY PRINT MODE: Clean PDF handout layout for teacher grading */
+      body.print-writing-only section {
+        display: none !important;
+      }
+
+      body.print-writing-only #writing-pdf-document {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
     }
   </style>
 </head>
@@ -25,7 +121,9 @@
     <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center">
       <div class="flex items-center space-x-3">
         <div class="p-2 bg-blue-500/20 rounded-lg backdrop-blur-sm border border-blue-400/30">
-          <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
         </div>
         <div>
           <h1 class="text-xl font-bold tracking-tight">Grade 9 English Academy</h1>
@@ -61,7 +159,7 @@
   </nav>
 
   <!-- Main Content Container -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
 
     <!-- TAB 1: LEARN (Explanations & Teaching) -->
     <section id="section-learn" class="space-y-8">
@@ -83,21 +181,21 @@
         <div class="grid md:grid-cols-3 gap-6">
           <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
             <h4 class="font-bold text-blue-900 mb-2">Singular Nouns</h4>
-            <p class="text-sm text-slate-600 mb-3">Names **one** person, place, thing, or idea.</p>
+            <p class="text-sm text-slate-600 mb-3">Names <strong>one</strong> person, place, thing, or idea.</p>
             <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs font-mono text-indigo-600">
               Examples: student, city, leaf, analysis
             </div>
           </div>
           <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
             <h4 class="font-bold text-blue-900 mb-2">Plural Nouns</h4>
-            <p class="text-sm text-slate-600 mb-3">Names **more than one** person, place, thing, or idea.</p>
+            <p class="text-sm text-slate-600 mb-3">Names <strong>more than one</strong> person, place, thing, or idea.</p>
             <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs font-mono text-indigo-600">
               Examples: students, cities, leaves, analyses
             </div>
           </div>
           <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
             <h4 class="font-bold text-blue-900 mb-2">Collective Nouns</h4>
-            <p class="text-sm text-slate-600 mb-3">Names a **group** acting as a single unit or individual members.</p>
+            <p class="text-sm text-slate-600 mb-3">Names a <strong>group</strong> acting as a single unit or individual members.</p>
             <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs font-mono text-indigo-600">
               Examples: team, jury, flock, committee
             </div>
@@ -860,89 +958,97 @@
     </section>
 
     <!-- TAB 5: RESULTS & REPORT CARD -->
-    <section id="section-results" class="hidden space-y-8">
-      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
-        <div class="flex flex-wrap justify-between items-start gap-4 border-b border-slate-200 pb-6">
+    <section id="section-results" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm print-compact-card">
+        
+        <!-- Header & Action Buttons -->
+        <div class="flex flex-wrap justify-between items-start gap-4 border-b border-slate-200 pb-4">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Official Evaluation Report</span>
-            <h2 class="text-2xl font-extrabold text-slate-900">Student Achievement Summary</h2>
-            <p class="text-xs text-slate-500 mt-1">Grade 9 English Language Arts Standards Assessment</p>
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 print-subtitle">Official Evaluation Report</span>
+            <h2 class="text-2xl font-extrabold text-slate-900 print-title">Student Achievement Summary</h2>
+            <p class="text-xs text-slate-500 mt-0.5 print-subtitle">Grade 9 English Language Arts Standards Assessment</p>
           </div>
-          <button onclick="window.print()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-2">
-            <span>🖨️</span> Print Report Card
-          </button>
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-2 no-print">
+            <button onclick="printReportCard()" class="px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+              <span>🖨️</span> Print Report Card (1 Page)
+            </button>
+            <button onclick="printWritingTaskPDF()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+              <span>📄</span> Export Writing Task PDF for Teacher
+            </button>
+          </div>
         </div>
 
         <!-- Student Credentials Banner -->
-        <div id="results-credentials-box" class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200 grid sm:grid-cols-3 gap-4 text-sm">
+        <div id="results-credentials-box" class="mt-4 p-3.5 bg-slate-50 rounded-xl border border-slate-200 grid grid-cols-3 gap-2 text-xs print-compact-card">
           <div>
-            <span class="text-xs text-slate-500 block">Student Name</span>
-            <strong id="res-student-name" class="text-slate-800 text-base">Not Completed</strong>
+            <span class="text-[10px] text-slate-500 uppercase font-bold block">Student Name</span>
+            <strong id="res-student-name" class="text-slate-800 text-sm">Not Completed</strong>
           </div>
           <div>
-            <span class="text-xs text-slate-500 block">Student ID / Class</span>
-            <strong id="res-student-id" class="text-slate-800 text-base">N/A</strong>
+            <span class="text-[10px] text-slate-500 uppercase font-bold block">Student ID / Class</span>
+            <strong id="res-student-id" class="text-slate-800 text-sm">N/A</strong>
           </div>
           <div>
-            <span class="text-xs text-slate-500 block">Assessment Date</span>
-            <strong id="res-date" class="text-slate-800 text-base">---</strong>
+            <span class="text-[10px] text-slate-500 uppercase font-bold block">Assessment Date</span>
+            <strong id="res-date" class="text-slate-800 text-sm">---</strong>
           </div>
         </div>
 
         <!-- Score Overview Cards -->
-        <div class="grid sm:grid-cols-3 gap-6 mt-6">
-          <div class="p-5 border border-slate-200 rounded-xl bg-blue-50/50 text-center">
-            <span class="text-xs text-blue-600 font-bold uppercase">Final Combined Score</span>
-            <div id="res-score-display" class="text-4xl font-black text-blue-900 mt-2">-- / 25</div>
-            <span id="res-percentage" class="text-xs text-blue-700 font-semibold">0%</span>
+        <div class="grid grid-cols-3 gap-4 mt-4">
+          <div class="p-3.5 border border-slate-200 rounded-xl bg-blue-50/60 text-center print-compact-card">
+            <span class="text-[10px] text-blue-700 font-extrabold uppercase">Final Combined Score</span>
+            <div id="res-score-display" class="text-2xl font-black text-blue-900 mt-1">-- / 25</div>
+            <span id="res-percentage" class="text-[10px] text-blue-700 font-semibold">0%</span>
           </div>
-          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50 text-center">
-            <span class="text-xs text-slate-500 font-bold uppercase">Performance Grade</span>
-            <div id="res-letter-grade" class="text-4xl font-black text-slate-700 mt-2">--</div>
-            <span id="res-grade-status" class="text-xs text-slate-500">Pending Quiz</span>
+          <div class="p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-center print-compact-card">
+            <span class="text-[10px] text-slate-500 font-extrabold uppercase">Performance Grade</span>
+            <div id="res-letter-grade" class="text-2xl font-black text-slate-800 mt-1">--</div>
+            <span id="res-grade-status" class="text-[10px] text-slate-500">Pending Quiz</span>
           </div>
-          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50 text-center">
-            <span class="text-xs text-slate-500 font-bold uppercase">Mastery Level</span>
-            <div id="res-mastery-tag" class="text-base font-bold text-slate-700 mt-3">Needs Assessment</div>
-            <span class="text-xs text-slate-400">Based on standard threshold</span>
+          <div class="p-3.5 border border-slate-200 rounded-xl bg-slate-50 text-center print-compact-card">
+            <span class="text-[10px] text-slate-500 font-extrabold uppercase">Mastery Level</span>
+            <div id="res-mastery-tag" class="text-xs font-bold text-slate-800 mt-2">Needs Assessment</div>
+            <span class="text-[10px] text-slate-400">Standard Threshold</span>
           </div>
         </div>
 
         <!-- Detailed Breakdown -->
-        <div class="mt-8">
-          <h3 class="font-bold text-slate-800 mb-4 text-sm">Detailed Learning Outcome Breakdown</h3>
-          <div class="border rounded-xl overflow-hidden text-sm">
+        <div class="mt-4">
+          <h3 class="font-bold text-slate-800 mb-2 text-xs uppercase tracking-wider">Detailed Learning Outcome Breakdown</h3>
+          <div class="border rounded-xl overflow-hidden text-xs">
             <table class="w-full text-left border-collapse">
-              <thead class="bg-slate-100 text-slate-600 text-xs uppercase font-semibold">
+              <thead class="bg-slate-100 text-slate-600 text-[10px] uppercase font-semibold">
                 <tr>
-                  <th class="p-3 border-b">Topic Standard</th>
-                  <th class="p-3 border-b">Status</th>
+                  <th class="p-2 border-b">Topic Standard</th>
+                  <th class="p-2 border-b text-right">Status</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-200 text-slate-700">
                 <tr>
-                  <td class="p-3">1.1 Nouns: Singular, Plural, Collective (Q1, Q4, Q5)</td>
-                  <td class="p-3"><span id="topic-1-1" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                  <td class="p-2">1.1 Nouns: Singular, Plural, Collective (Q1, Q4, Q5)</td>
+                  <td class="p-2 text-right"><span id="topic-1-1" class="text-[10px] px-2 py-0.5 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
                 </tr>
                 <tr>
-                  <td class="p-3">1.2 Nouns: Proper/Common & Concrete/Abstract (Q2, Q3, Q6)</td>
-                  <td class="p-3"><span id="topic-1-2" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                  <td class="p-2">1.2 Nouns: Proper/Common & Concrete/Abstract (Q2, Q3, Q6)</td>
+                  <td class="p-2 text-right"><span id="topic-1-2" class="text-[10px] px-2 py-0.5 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
                 </tr>
                 <tr>
-                  <td class="p-3">1.3 Pronouns: Personal, Possessive, Reflexive & Intensive (Q7, Q8, Q11)</td>
-                  <td class="p-3"><span id="topic-1-3" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                  <td class="p-2">1.3 Pronouns: Personal, Possessive, Reflexive & Intensive (Q7, Q8, Q11)</td>
+                  <td class="p-2 text-right"><span id="topic-1-3" class="text-[10px] px-2 py-0.5 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
                 </tr>
                 <tr>
-                  <td class="p-3">1.4 Pronouns: Relative, Indefinite, Demonstrative & Interrogative (Q9, Q10, Q12, Q13, Q14)</td>
-                  <td class="p-3"><span id="topic-1-4" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                  <td class="p-2">1.4 Pronouns: Relative, Indefinite, Demonstrative & Interrogative (Q9, Q10, Q12, Q13, Q14)</td>
+                  <td class="p-2 text-right"><span id="topic-1-4" class="text-[10px] px-2 py-0.5 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
                 </tr>
                 <tr>
-                  <td class="p-3">Narrative Dialogue Mechanics & Paragraphing (Q15, Q16, Q17, Q18, Q19, Q20)</td>
-                  <td class="p-3"><span id="topic-writing" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                  <td class="p-2">Narrative Dialogue Mechanics & Paragraphing (Q15, Q16, Q17, Q18, Q19, Q20)</td>
+                  <td class="p-2 text-right"><span id="topic-writing" class="text-[10px] px-2 py-0.5 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
                 </tr>
                 <tr>
-                  <td class="p-3">Performance Task: Narrative Dialogue Writing & Application (Section B)</td>
-                  <td class="p-3"><span id="topic-task" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                  <td class="p-2">Performance Task: Narrative Dialogue Writing & Application (Section B)</td>
+                  <td class="p-2 text-right"><span id="topic-task" class="text-[10px] px-2 py-0.5 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
                 </tr>
               </tbody>
             </table>
@@ -950,19 +1056,146 @@
         </div>
 
         <!-- Writing Task Submission Preview on Report Card -->
-        <div id="writing-review-box" class="mt-8 border border-slate-200 rounded-xl p-5 bg-slate-50 hidden">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Submitted Dialogue Performance Task</h4>
-          <blockquote id="writing-review-text" class="text-xs font-mono bg-white p-4 rounded-lg border border-slate-200 whitespace-pre-line text-slate-800">
+        <div id="writing-review-box" class="mt-4 border border-slate-200 rounded-xl p-3.5 bg-slate-50 hidden print-compact-card">
+          <div class="flex items-center justify-between mb-1.5">
+            <h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-600">Submitted Narrative Dialogue Performance Task</h4>
+            <button onclick="printWritingTaskPDF()" class="text-[11px] font-bold text-emerald-700 hover:underline no-print flex items-center gap-1">
+              <span>📥</span> Export as PDF to send to Teacher
+            </button>
+          </div>
+          <blockquote id="writing-review-text" class="text-xs font-mono bg-white p-3 rounded-lg border border-slate-200 whitespace-pre-line text-slate-800 leading-relaxed">
           </blockquote>
+        </div>
+
+        <!-- Official Teacher Sign-off Footer for Print -->
+        <div class="mt-4 pt-3 border-t border-slate-200 grid grid-cols-2 gap-4 text-[10px] text-slate-500">
+          <div>
+            <span class="block">Teacher Signature: _______________________</span>
+          </div>
+          <div class="text-right">
+            <span class="block">Grade 9 English Dept • School Year 2026</span>
+          </div>
         </div>
 
       </div>
     </section>
 
+    <!-- HIDDEN WRITING TASK PDF DOCUMENT VIEW FOR PRINTING -->
+    <div id="writing-pdf-document" class="hidden">
+      <div class="max-w-3xl mx-auto p-8 border-2 border-slate-800 bg-white text-slate-900">
+        <!-- Header -->
+        <div class="border-b-2 border-slate-800 pb-4 mb-6 flex justify-between items-end">
+          <div>
+            <span class="text-xs font-bold text-indigo-700 uppercase tracking-widest block">Grade 9 English Assessment Submission</span>
+            <h1 class="text-2xl font-black text-slate-900">Narrative Dialogue Writing Task</h1>
+            <p class="text-xs text-slate-600 mt-1">Final Assessment Performance Task • For Teacher Grading</p>
+          </div>
+          <div class="text-right text-xs">
+            <span class="block text-slate-500">Date Submitted:</span>
+            <strong id="pdf-doc-date" class="block text-sm text-slate-800">---</strong>
+          </div>
+        </div>
+
+        <!-- Student Info Header Table -->
+        <table class="w-full text-xs border border-slate-400 mb-6">
+          <tr class="bg-slate-100">
+            <td class="p-2 border border-slate-400 font-bold w-1/4">Student Full Name:</td>
+            <td id="pdf-doc-name" class="p-2 border border-slate-400 font-semibold w-1/4">---</td>
+            <td class="p-2 border border-slate-400 font-bold w-1/4">Student ID / Class:</td>
+            <td id="pdf-doc-id" class="p-2 border border-slate-400 font-semibold w-1/4">---</td>
+          </tr>
+          <tr>
+            <td class="p-2 border border-slate-400 font-bold">Grammar MCQ Score:</td>
+            <td id="pdf-doc-mcq" class="p-2 border border-slate-400 font-semibold">-- / 20</td>
+            <td class="p-2 border border-slate-400 font-bold">Writing Task Auto Check:</td>
+            <td id="pdf-doc-writing-score" class="p-2 border border-slate-400 font-semibold">-- / 5 Pts</td>
+          </tr>
+        </table>
+
+        <!-- Writing Task Prompt Box -->
+        <div class="bg-slate-50 border border-slate-300 p-4 rounded-lg text-xs mb-6 space-y-2">
+          <strong class="text-slate-900 uppercase tracking-wider block font-bold">Prompt & Formatting Instructions:</strong>
+          <p class="text-slate-700">
+            Write a short dialogue scene (4 to 6 lines / at least 2 speaker exchanges) between two characters who discover a hidden room or confidential document.
+          </p>
+          <div class="text-[11px] text-slate-600 italic">
+            Requirements: New paragraph per speaker; quotation marks with punctuation inside; include at least 1 abstract noun, 1 collective noun, and 1 intensive pronoun.
+          </div>
+        </div>
+
+        <!-- Submitted Essay Box -->
+        <div class="mb-6">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Student Written Response:</h3>
+          <div id="pdf-doc-text" class="p-5 border-2 border-slate-300 bg-slate-50 rounded-lg text-sm font-mono whitespace-pre-line leading-relaxed text-slate-900 min-h-[180px]">
+          </div>
+        </div>
+
+        <!-- Teacher Rubric & Feedback Grading Box -->
+        <div class="border-2 border-slate-800 rounded-lg p-4 bg-slate-50">
+          <h3 class="text-xs font-black uppercase tracking-wider text-slate-900 mb-3 border-b border-slate-300 pb-1">Teacher Evaluation & Official Grading Rubric</h3>
+          
+          <div class="grid grid-cols-2 gap-4 text-xs mb-4">
+            <table class="w-full border-collapse border border-slate-300 text-[11px]">
+              <thead>
+                <tr class="bg-slate-200 font-bold">
+                  <th class="p-1.5 border border-slate-300">Criteria</th>
+                  <th class="p-1.5 border border-slate-300 text-center">Pts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="p-1.5 border border-slate-300">Dialogue Punctuation & Quotes</td>
+                  <td class="p-1.5 border border-slate-300 text-center">/ 1.0</td>
+                </tr>
+                <tr>
+                  <td class="p-1.5 border border-slate-300">Speaker Paragraphing / Lines</td>
+                  <td class="p-1.5 border border-slate-300 text-center">/ 1.0</td>
+                </tr>
+                <tr>
+                  <td class="p-1.5 border border-slate-300">Abstract Noun Usage</td>
+                  <td class="p-1.5 border border-slate-300 text-center">/ 1.0</td>
+                </tr>
+                <tr>
+                  <td class="p-1.5 border border-slate-300">Collective Noun Usage</td>
+                  <td class="p-1.5 border border-slate-300 text-center">/ 1.0</td>
+                </tr>
+                <tr>
+                  <td class="p-1.5 border border-slate-300">Intensive Pronoun Usage</td>
+                  <td class="p-1.5 border border-slate-300 text-center">/ 1.0</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="border border-slate-300 p-2 bg-white rounded flex flex-col justify-between">
+              <div>
+                <strong class="text-[11px] block font-bold text-slate-800 mb-1">Final Writing Score:</strong>
+                <div class="text-xl font-black text-slate-900">____ / 5.0 Points</div>
+              </div>
+              <div class="border-t border-slate-200 pt-2 text-[10px] text-slate-600">
+                Teacher Signature: ___________________
+              </div>
+            </div>
+          </div>
+
+          <div class="text-xs">
+            <strong class="block font-bold text-slate-800 mb-1">Teacher Feedback & Comments:</strong>
+            <div class="h-20 border border-slate-300 bg-white rounded p-2 text-slate-400 italic text-[11px]">
+              Write comments here...
+            </div>
+          </div>
+        </div>
+
+        <!-- Printable Footer -->
+        <div class="mt-6 text-center text-[10px] text-slate-500 border-t pt-2">
+          Grade 9 English Language Arts Module • Standardized Assessment Submission Document
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-auto">
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-auto no-print">
     Grade 9 English Interactive Learning Module • Standardized Curriculum Aligned
   </footer>
 
@@ -974,6 +1207,9 @@
       studentId: '',
       quizCompleted: false,
       score: 0,
+      mcqScore: 0,
+      writingScore: 0,
+      writingText: '',
       answers: {
         q1: 'B',
         q2: 'B',
@@ -1102,6 +1338,8 @@
         }
       }
 
+      state.mcqScore = score;
+
       // Section B Writing Task Scoring (Up to 5 points)
       const writingText = document.getElementById('writing-task-input').value.trim();
       let writingScore = 0;
@@ -1112,6 +1350,8 @@
       if (/courage|fear|mystery|silence|wisdom|truth|hope|honesty/i.test(writingText)) writingScore += 1; // Abstract noun heuristic check
       if (/himself|herself|myself|ourselves|themselves/i.test(writingText)) writingScore += 1; // Intensive pronoun heuristic check
 
+      state.writingScore = writingScore;
+      state.writingText = writingText;
       score += writingScore;
 
       // Update Outcome Breakdown Table
@@ -1121,10 +1361,10 @@
           const ratio = topicScores[topic].correct / topicScores[topic].total;
           if (ratio >= 0.8) {
             elem.innerText = `Mastered (${topicScores[topic].correct}/${topicScores[topic].total})`;
-            elem.className = 'text-xs px-2 py-1 rounded bg-emerald-100 text-emerald-800 font-semibold';
+            elem.className = 'text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold';
           } else {
             elem.innerText = `Needs Review (${topicScores[topic].correct}/${topicScores[topic].total})`;
-            elem.className = 'text-xs px-2 py-1 rounded bg-amber-100 text-amber-800 font-semibold';
+            elem.className = 'text-[10px] px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold';
           }
         }
       }
@@ -1133,12 +1373,20 @@
       const taskElem = document.getElementById('topic-task');
       if (taskElem) {
         taskElem.innerText = `Completed (${writingScore}/5 Pts)`;
-        taskElem.className = writingScore >= 3 ? 'text-xs px-2 py-1 rounded bg-emerald-100 text-emerald-800 font-semibold' : 'text-xs px-2 py-1 rounded bg-amber-100 text-amber-800 font-semibold';
+        taskElem.className = writingScore >= 3 ? 'text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold' : 'text-[10px] px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold';
       }
 
       // Show submitted text on report card
       document.getElementById('writing-review-box').classList.remove('hidden');
       document.getElementById('writing-review-text').innerText = writingText;
+
+      // Populate hidden PDF document view for export
+      document.getElementById('pdf-doc-name').innerText = state.studentName;
+      document.getElementById('pdf-doc-id').innerText = state.studentId;
+      document.getElementById('pdf-doc-date').innerText = new Date().toLocaleDateString();
+      document.getElementById('pdf-doc-mcq').innerText = `${state.mcqScore} / 20`;
+      document.getElementById('pdf-doc-writing-score').innerText = `${writingScore} / 5 Pts`;
+      document.getElementById('pdf-doc-text').innerText = writingText;
 
       state.score = score;
       state.quizCompleted = true;
@@ -1177,6 +1425,33 @@
 
       // Switch to results tab
       switchTab('results');
+    }
+
+    // Print standard 1-page portrait Report Card
+    function printReportCard() {
+      document.body.classList.remove('print-writing-only');
+      window.print();
+    }
+
+    // Print/Save Writing Task as PDF for Teacher Grading
+    function printWritingTaskPDF() {
+      if (!state.writingText) {
+        const inputVal = document.getElementById('writing-task-input').value.trim();
+        if (inputVal) {
+          document.getElementById('pdf-doc-text').innerText = inputVal;
+          document.getElementById('pdf-doc-name').innerText = state.studentName || 'Student';
+          document.getElementById('pdf-doc-id').innerText = state.studentId || 'Grade 9';
+          document.getElementById('pdf-doc-date').innerText = new Date().toLocaleDateString();
+        }
+      }
+      
+      document.body.classList.add('print-writing-only');
+      window.print();
+      
+      // Clean up class after printing
+      setTimeout(() => {
+        document.body.classList.remove('print-writing-only');
+      }, 1000);
     }
   </script>
 </body>
