@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 9 English Masterclass: Nouns, Pronouns & Narrative Dialogue</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .tab-btn.active {
+      border-bottom: 3px solid #3b82f6;
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="p-2 bg-blue-500/20 rounded-lg backdrop-blur-sm border border-blue-400/30">
+          <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight">Grade 9 English Academy</h1>
+          <p class="text-xs text-blue-200">Grammar & Narrative Writing Interactive Module</p>
+        </div>
+      </div>
+      <div id="student-badge" class="hidden sm:flex items-center bg-white/10 px-4 py-1.5 rounded-full text-xs font-medium backdrop-blur-md border border-white/10 mt-2 sm:mt-0">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+        <span id="badge-name">Student Portal</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="bg-white border-b border-slate-200 sticky top-[73px] z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-2 sm:space-x-8 overflow-x-auto no-scrollbar">
+      <button onclick="switchTab('learn')" id="tab-learn" class="tab-btn active py-4 px-3 text-sm font-medium border-b-2 border-transparent hover:text-blue-600 flex items-center gap-2 whitespace-nowrap">
+        <span>📖</span> Lesson & Notes
+      </button>
+      <button onclick="switchTab('practice')" id="tab-practice" class="tab-btn py-4 px-3 text-sm font-medium border-b-2 border-transparent hover:text-blue-600 flex items-center gap-2 whitespace-nowrap">
+        <span>✏️</span> Guided Practice
+      </button>
+      <button onclick="switchTab('ccq')" id="tab-ccq" class="tab-btn py-4 px-3 text-sm font-medium border-b-2 border-transparent hover:text-blue-600 flex items-center gap-2 whitespace-nowrap">
+        <span>🧠</span> Concept Check (CCQs)
+      </button>
+      <button onclick="switchTab('quiz')" id="tab-quiz" class="tab-btn py-4 px-3 text-sm font-medium border-b-2 border-transparent hover:text-blue-600 flex items-center gap-2 whitespace-nowrap">
+        <span>🎓</span> Final Assessment
+      </button>
+      <button onclick="switchTab('results')" id="tab-results" class="tab-btn py-4 px-3 text-sm font-medium border-b-2 border-transparent hover:text-blue-600 flex items-center gap-2 whitespace-nowrap">
+        <span>📊</span> Report Card
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+
+    <!-- TAB 1: LEARN (Explanations & Teaching) -->
+    <section id="section-learn" class="space-y-8">
+      <!-- Welcome Intro -->
+      <div class="bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-100 rounded-2xl p-6 md:p-8 shadow-sm">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">Overview</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 mb-2">Mastering Nouns, Pronouns & Narrative Dialogue</h2>
+        <p class="text-slate-600 leading-relaxed max-w-4xl">
+          Welcome to Grade 9 English! This unit covers key grammatical structures that form the foundation of mature sentence design, alongside creative narrative techniques for writing vivid dialogue.
+        </p>
+      </div>
+
+      <!-- 1.1 Nouns: Singular, Plural, Collective -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md">1.1</span>
+          <h3 class="text-xl font-bold text-slate-800">Nouns: Singular, Plural, and Collective</h3>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-blue-900 mb-2">Singular Nouns</h4>
+            <p class="text-sm text-slate-600 mb-3">Names **one** person, place, thing, or idea.</p>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs font-mono text-indigo-600">
+              Examples: student, city, leaf, analysis
+            </div>
+          </div>
+          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-blue-900 mb-2">Plural Nouns</h4>
+            <p class="text-sm text-slate-600 mb-3">Names **more than one** person, place, thing, or idea.</p>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs font-mono text-indigo-600">
+              Examples: students, cities, leaves, analyses
+            </div>
+          </div>
+          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-blue-900 mb-2">Collective Nouns</h4>
+            <p class="text-sm text-slate-600 mb-3">Names a **group** acting as a single unit or individual members.</p>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 text-xs font-mono text-indigo-600">
+              Examples: team, jury, flock, committee
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl text-xs sm:text-sm text-amber-900">
+          <strong>💡 Pro-Tip for Grade 9:</strong> Collective nouns take a singular verb when the group acts together (e.g., <em>"The jury reaches its verdict."</em>), but a plural verb when members act individually (e.g., <em>"The jury sign their separate forms."</em>).
+        </div>
+      </div>
+
+      <!-- 1.2 Nouns: Proper/Common; Concrete/Abstract -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md">1.2</span>
+          <h3 class="text-xl font-bold text-slate-800">Nouns: Proper & Common; Concrete & Abstract</h3>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div class="p-4 border border-indigo-100 rounded-xl bg-indigo-50/50">
+              <h4 class="font-bold text-indigo-900 text-sm uppercase tracking-wide mb-1">Common vs Proper</h4>
+              <p class="text-sm text-slate-600"><strong>Common Nouns</strong> name general items (<em>country, monument, author</em>).</p>
+              <p class="text-sm text-slate-600 mt-1"><strong>Proper Nouns</strong> name specific people, places, or things and are ALWAYS capitalized (<em>Kenya, Statue of Liberty, Shakespeare</em>).</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="p-4 border border-indigo-100 rounded-xl bg-indigo-50/50">
+              <h4 class="font-bold text-indigo-900 text-sm uppercase tracking-wide mb-1">Concrete vs Abstract</h4>
+              <p class="text-sm text-slate-600"><strong>Concrete Nouns</strong> can be perceived by the 5 physical senses (<em>thunder, perfume, desk</em>).</p>
+              <p class="text-sm text-slate-600 mt-1"><strong>Abstract Nouns</strong> are ideas, qualities, or concepts that cannot be touched (<em>courage, justice, freedom</em>).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.3 Pronouns: Personal, Possessive, Reflexive, Intensive -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md">1.3</span>
+          <h3 class="text-xl font-bold text-slate-800">Pronouns: Personal, Possessive, Reflexive & Intensive</h3>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="border border-slate-200 p-4 rounded-xl">
+            <h4 class="font-bold text-slate-900 mb-2">1. Personal & Possessive</h4>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li>• <strong>Personal (Subject):</strong> I, you, he, she, it, we, they (<em><u>She</u> led the meeting.</em>)</li>
+              <li>• <strong>Personal (Object):</strong> me, you, him, her, it, us, them (<em>Call <u>him</u> back.</em>)</li>
+              <li>• <strong>Possessive:</strong> my/mine, your/yours, his, her/hers, its, our/ours, their/theirs (<em>The notebook is <u>mine</u>.</em>)</li>
+            </ul>
+          </div>
+          <div class="border border-slate-200 p-4 rounded-xl">
+            <h4 class="font-bold text-slate-900 mb-2">2. Reflexive vs. Intensive (-self / -selves)</h4>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li>• <strong>Reflexive:</strong> Essential to sentence meaning; reflects action back to the subject.<br><span class="text-xs text-indigo-600 font-mono">Example: He cut <u>himself</u> while cooking.</span></li>
+              <li>• <strong>Intensive:</strong> Emphasizes its antecedent; can be removed without changing basic sentence structure.<br><span class="text-xs text-indigo-600 font-mono">Example: The mayor <u>himself</u> attended the rally.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1.4 Pronouns: Interrogative, Relative, Demonstrative, Indefinite -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md">1.4</span>
+          <h3 class="text-xl font-bold text-slate-800">Pronouns: Interrogative, Relative, Demonstrative & Indefinite</h3>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-slate-900 border-b pb-2 mb-2">Interrogative</h4>
+            <p class="text-xs text-slate-600 mb-2">Used to ask direct questions.</p>
+            <p class="font-semibold text-indigo-700">Who, Whom, Whose, Which, What</p>
+            <span class="text-xs text-slate-500 italic">"<u>Who</u> left the door unlocked?"</span>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-slate-900 border-b pb-2 mb-2">Relative</h4>
+            <p class="text-xs text-slate-600 mb-2">Introduces a relative clause, connecting ideas.</p>
+            <p class="font-semibold text-indigo-700">Who, Whom, Whose, Which, That</p>
+            <span class="text-xs text-slate-500 italic">"The book <u>that</u> you recommended was great."</span>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-slate-900 border-b pb-2 mb-2">Demonstrative</h4>
+            <p class="text-xs text-slate-600 mb-2">Points out specific things/people near or far.</p>
+            <p class="font-semibold text-indigo-700">This, That, These, Those</p>
+            <span class="text-xs text-slate-500 italic">"<u>These</u> are my favorite sneakers."</span>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <h4 class="font-bold text-slate-900 border-b pb-2 mb-2">Indefinite</h4>
+            <p class="text-xs text-slate-600 mb-2">Refers to non-specific people or things.</p>
+            <p class="font-semibold text-indigo-700">Everyone, Someone, Few, Several, Nobody</p>
+            <span class="text-xs text-slate-500 italic">"<u>Everyone</u> enjoyed the show."</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Narrative Writing: Dialogue Focus -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-md">WRITING</span>
+          <h3 class="text-xl font-bold text-slate-800">Narrative Writing: Structuring & Punctuation of Dialogue</h3>
+        </div>
+        
+        <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+          Effective narrative dialogue does more than report speech—it advances the plot, reveals character personality, and creates tension.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div class="border border-emerald-100 bg-emerald-50/30 p-5 rounded-xl">
+            <h4 class="font-bold text-emerald-900 mb-3 flex items-center gap-2">
+              <span>📌</span> The 4 Golden Formatting Rules
+            </h4>
+            <ol class="text-sm space-y-2 text-slate-700 list-decimal list-inside">
+              <li><strong>Enclose spoken words in quotation marks (" "):</strong> Direct speech only.</li>
+              <li><strong>New speaker = New paragraph:</strong> Always indent or start a fresh line when the speaker changes.</li>
+              <li><strong>Punctuation inside quotation marks:</strong> Commas, periods, question marks, and exclamation marks stay INSIDE.</li>
+              <li><strong>Dialogue Tags & Capitalization:</strong> If tag follows dialogue, end spoken phrase with comma inside quotes, then keep tag lowercase (unless a proper noun).</li>
+            </ol>
+          </div>
+
+          <div class="border border-slate-200 p-5 rounded-xl bg-slate-50">
+            <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+              <span>✍️</span> Example Breakdown
+            </h4>
+            <div class="bg-white p-4 rounded-lg border border-slate-200 text-sm space-y-3 font-mono text-slate-800">
+              <p>"We need to leave before sunset," warned Maya, looking up at the darkening horizon.</p>
+              <p>Julian shook his head. "I'm not leaving without the map."</p>
+              <p>"Are you out of your mind?" she asked.</p>
+            </div>
+            <p class="text-xs text-slate-500 mt-3">Notice how action beats (<em>looking up at the horizon</em>) replace repetitive tags like <em>"said"</em>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: GUIDED PRACTICE -->
+    <section id="section-practice" class="hidden space-y-8">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900 mb-2">Guided Practice Drills</h2>
+        <p class="text-slate-600 text-sm mb-6">Test your immediate recall. Select or type your answers to receive instant feedback.</p>
+
+        <div class="space-y-6">
+          <!-- Drill 1 -->
+          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50/50">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Drill 1 • Noun Classification</span>
+            <p class="font-semibold text-slate-800 mt-2 mb-3">Identify the collective noun in this sentence: <br><span class="italic text-slate-600 font-normal">"The orchestra rehearsed diligently for three hours prior to the concert."</span></p>
+            <div class="flex flex-wrap gap-3" id="drill-1-options">
+              <button onclick="checkDrill(1, 'orchestra', this)" class="px-4 py-2 text-sm bg-white border border-slate-300 rounded-lg hover:bg-blue-50 hover:border-blue-400 transition">orchestra</button>
+              <button onclick="checkDrill(1, 'hours', this)" class="px-4 py-2 text-sm bg-white border border-slate-300 rounded-lg hover:bg-blue-50 hover:border-blue-400 transition">hours</button>
+              <button onclick="checkDrill(1, 'concert', this)" class="px-4 py-2 text-sm bg-white border border-slate-300 rounded-lg hover:bg-blue-50 hover:border-blue-400 transition">concert</button>
+            </div>
+            <p id="drill-1-feedback" class="mt-3 text-sm font-medium hidden"></p>
+          </div>
+
+          <!-- Drill 2 -->
+          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50/50">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Drill 2 • Reflexive vs Intensive</span>
+            <p class="font-semibold text-slate-800 mt-2 mb-3">Is the underlined pronoun Reflexive or Intensive? <br><span class="italic text-slate-600 font-normal">"The principal <u>herself</u> handed out the academic excellence diplomas."</span></p>
+            <div class="flex gap-3" id="drill-2-options">
+              <button onclick="checkDrill(2, 'intensive', this)" class="px-4 py-2 text-sm bg-white border border-slate-300 rounded-lg hover:bg-blue-50 hover:border-blue-400 transition">Intensive</button>
+              <button onclick="checkDrill(2, 'reflexive', this)" class="px-4 py-2 text-sm bg-white border border-slate-300 rounded-lg hover:bg-blue-50 hover:border-blue-400 transition">Reflexive</button>
+            </div>
+            <p id="drill-2-feedback" class="mt-3 text-sm font-medium hidden"></p>
+          </div>
+
+          <!-- Drill 3 -->
+          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50/50">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Drill 3 • Punctuation of Dialogue</span>
+            <p class="font-semibold text-slate-800 mt-2 mb-3">Which option is correctly punctuated?</p>
+            <div class="space-y-2" id="drill-3-options">
+              <button onclick="checkDrill(3, 'A', this)" class="w-full text-left p-3 text-sm bg-white border border-slate-300 rounded-lg hover:bg-blue-50 transition">A) "I can't believe we made it," said Liam "that was terrifying."</button>
+              <button onclick="checkDrill(3, 'B', this)" class="w-full text-left p-3 text-sm bg-white border border-slate-300 rounded-lg hover:bg-blue-50 transition">B) "I can't believe we made it," said Liam. "That was terrifying."</button>
+              <button onclick="checkDrill(3, 'C', this)" class="w-full text-left p-3 text-sm bg-white border border-slate-300 rounded-lg hover:bg-blue-50 transition">C) "I can't believe we made it" said Liam, "That was terrifying."</button>
+            </div>
+            <p id="drill-3-feedback" class="mt-3 text-sm font-medium hidden"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: CCQs (Concept Checking Questions) -->
+    <section id="section-ccq" class="hidden space-y-8">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <div class="mb-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">Understanding Check</span>
+          <h2 class="text-2xl font-bold text-slate-900 mt-2">Concept Checking Questions (CCQs)</h2>
+          <p class="text-slate-600 text-sm">Deepen your conceptual mastery by answering these fundamental questions.</p>
+        </div>
+
+        <div class="space-y-6">
+          <!-- CCQ 1 -->
+          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50">
+            <h3 class="font-bold text-slate-800 mb-2">CCQ 1: Concrete vs. Abstract Nouns</h3>
+            <p class="text-sm text-slate-600 mb-3">Can a noun be both abstract and concrete at the same time? Why or why not?</p>
+            <textarea id="ccq-1-input" rows="3" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your answer here..."></textarea>
+            <button onclick="revealCCQ(1)" class="mt-2 text-xs font-bold text-blue-600 hover:text-blue-800 underline">Reveal Teacher Notes & Sample Answer</button>
+            <div id="ccq-1-answer" class="hidden mt-3 p-4 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-900 space-y-1">
+              <strong>Key Concept:</strong> No. Concrete nouns MUST be physically detectable by at least one of the 5 senses (sight, sound, touch, taste, smell). Abstract nouns represent non-physical ideas, emotions, or qualities (e.g., <em>justice, fear, knowledge</em>).
+            </div>
+          </div>
+
+          <!-- CCQ 2 -->
+          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50">
+            <h3 class="font-bold text-slate-800 mb-2">CCQ 2: Identifying Intensive Pronouns</h3>
+            <p class="text-sm text-slate-600 mb-3">What happens to a sentence if you remove an intensive pronoun? Does it break grammatically?</p>
+            <textarea id="ccq-2-input" rows="3" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your answer here..."></textarea>
+            <button onclick="revealCCQ(2)" class="mt-2 text-xs font-bold text-blue-600 hover:text-blue-800 underline">Reveal Teacher Notes & Sample Answer</button>
+            <div id="ccq-2-answer" class="hidden mt-3 p-4 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-900 space-y-1">
+              <strong>Key Concept:</strong> If you remove an intensive pronoun, the sentence remains grammatically complete and retains its fundamental meaning (e.g., "The chef [himself] cooked the meal" -> "The chef cooked the meal"). Reflexive pronouns, however, CANNOT be removed without ruining sentence sense.
+            </div>
+          </div>
+
+          <!-- CCQ 3 -->
+          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50">
+            <h3 class="font-bold text-slate-800 mb-2">CCQ 3: Relative vs Interrogative Pronouns</h3>
+            <p class="text-sm text-slate-600 mb-3">Both relative and interrogative pronouns use words like <em>who</em> or <em>which</em>. How do you distinguish them?</p>
+            <textarea id="ccq-3-input" rows="3" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Type your answer here..."></textarea>
+            <button onclick="revealCCQ(3)" class="mt-2 text-xs font-bold text-blue-600 hover:text-blue-800 underline">Reveal Teacher Notes & Sample Answer</button>
+            <div id="ccq-3-answer" class="hidden mt-3 p-4 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-900 space-y-1">
+              <strong>Key Concept:</strong> Interrogative pronouns are used to ask questions (<em>Who is at the door?</em>). Relative pronouns introduce relative clauses that connect to a noun earlier in the sentence (<em>The teacher who inspired me received an award</em>).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: QUIZ (Final Assessment) -->
+    <section id="section-quiz" class="hidden space-y-8">
+      <!-- Credentials Modal / Form -->
+      <div id="quiz-student-form" class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <h2 class="text-xl font-bold text-slate-900 mb-2">Student Registration</h2>
+        <p class="text-slate-600 text-sm mb-6">Enter your details before beginning the scored examination.</p>
+        <form onsubmit="startQuiz(event)" class="max-w-md space-y-4">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Full Name</label>
+            <input type="text" id="input-student-name" required class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Jane Doe">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Student ID / Class Code</label>
+            <input type="text" id="input-student-id" required class="w-full px-4 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="ENG9-2026-A">
+          </div>
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg text-sm transition shadow-md hover:shadow-lg">
+            Begin Graded Quiz
+          </button>
+        </form>
+      </div>
+
+      <!-- Quiz Questions (Hidden until registered) -->
+      <div id="quiz-content" class="hidden bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm space-y-8">
+        <div class="flex justify-between items-center border-b pb-4">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900">Grade 9 English Assessment</h2>
+            <p class="text-xs text-slate-500">20 Multiple Choice Questions + 1 Narrative Writing Task (25 Points Total)</p>
+          </div>
+          <div class="text-right">
+            <span class="text-xs font-semibold text-slate-500">Student:</span>
+            <div id="quiz-active-user" class="text-sm font-bold text-blue-600"></div>
+          </div>
+        </div>
+
+        <form id="quiz-form" onsubmit="submitQuiz(event)" class="space-y-8">
+          <div class="border-b border-slate-200 pb-2">
+            <h3 class="text-lg font-bold text-indigo-900">Section A: Grammar & Mechanics (Questions 1–20 • 1 Pt Each)</h3>
+            <p class="text-xs text-slate-500">Select the correct answer for each question.</p>
+          </div>
+
+          <!-- Q1 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">1. Select the correct verb form for this collective noun sentence: <br><span class="italic text-slate-600">"The jury ____ divided in their individual opinions after debating all afternoon."</span></p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q1" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) was</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q1" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) were</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q1" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) has been</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q1" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) is</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">2. Which option contains an <strong>abstract noun</strong>?</p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q2" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) The wooden key unlocked the heavy iron chest.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q2" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Her integrity impressed the entire interview committee.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q2" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Three wild geese flew high over the frozen lake.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q2" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Place your notebook and pencil on the desk.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">3. Identify the <strong>proper noun</strong> in this sentence: <br><span class="italic text-slate-600">"Last summer, our history class visited the Smithsonian in Washington."</span></p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q3" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) summer</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q3" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) class</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q3" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Smithsonian</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q3" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) history</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">4. What is the correct irregular plural form of the singular noun <strong>criterion</strong>?</p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q4" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) criterions</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q4" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) criteria</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q4" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) criterias</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q4" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) criterium</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">5. Choose the correct verb for this collective noun acting as a single unified unit: <br><span class="italic text-slate-600">"The audience ____ standing to applaud the final musical performance."</span></p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q5" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) is</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q5" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) are</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q5" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) were</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q5" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) have</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">6. In the sentence, <em>"Knowledge brings freedom, while ignorance breeds fear,"</em> how many <strong>abstract nouns</strong> are present?</p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q6" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) 2</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q6" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) 3</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q6" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) 4</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q6" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) 5</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">7. Identify the <strong>possessive pronoun</strong> in this sentence: <br><span class="italic text-slate-600">"Although this leather notebook looks like mine, it actually belongs to Marcus."</span></p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q7" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) this</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q7" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) mine</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q7" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) it</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q7" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Marcus</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">8. In the sentence <em>"The mayor <u>himself</u> presented the bravery awards,"</em> what function does the underlined pronoun serve?</p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q8" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Reflexive pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q8" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Intensive pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q8" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Personal pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q8" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Relative pronoun</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">9. Which sentence correctly contains a <strong>relative pronoun</strong>?</p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q9" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Who left their backpack near the laboratory door?</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q9" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) The historian who written this biography was honored last night.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q9" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Which book do you intend to borrow for the weekend?</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q9" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Somebody dropped their keys under the wooden bench.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">10. Select the sentence that uses an <strong>indefinite pronoun</strong>:</p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q10" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Those are the new equipment boxes for the gymnasium.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q10" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Everyone must register before entering the auditorium.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q10" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Which pathway leads back toward the main entrance?</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q10" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) She bought herself a sketchbook for drawing.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q11 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">11. In the sentence <em>"Liam accidentally hurt <u>himself</u> during soccer practice,"</em> what type of pronoun is <em>himself</em>?</p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q11" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Intensive pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q11" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Reflexive pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q11" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Demonstrative pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q11" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Interrogative pronoun</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q12 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">12. Choose the correct pronoun to maintain agreement with the singular indefinite antecedent: <br><span class="italic text-slate-600">"Neither of the female candidates lost ____ focus during the debate."</span></p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q12" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) their</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q12" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) her</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q12" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) its</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q12" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) hers</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q13 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">13. Identify the <strong>demonstrative pronoun</strong> in this sentence: <br><span class="italic text-slate-600">"I like these shoes, but those on the top shelf look much sturdier."</span></p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q13" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) those</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q13" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) these (adjective)</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q13" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) shoes</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q13" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) sturdier</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q14 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">14. What is the grammatical classification of the underlined pronoun? <br><span class="italic text-slate-600">"<u>Whom</u> did the principal select to represent Grade 9?"</span></p>
+            <div class="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q14" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Relative pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q14" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Interrogative pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q14" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Indefinite pronoun</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q14" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Personal pronoun</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q15 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">15. Choose the dialogue sentence with <strong>correct punctuation and capitalization</strong>:</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q15" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) "Where is the lost key"? asked Sarah.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q15" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) "Where is the lost key?" Asked Sarah.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q15" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) "Where is the lost key?" asked Sarah.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q15" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) "Where is the lost key," asked Sarah?</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q16 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">16. What is the mandatory formatting rule when narrative dialogue transitions from <strong>one speaker to another</strong>?</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q16" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Switch to italicized font for the second speaker.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q16" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Capitalize every word spoken by the new speaker.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q16" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Start a new paragraph or line whenever the speaker changes.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q16" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Place single quotation marks around the new speaker's words.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q17 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">17. Select the correctly formatted split dialogue sentence with a middle speech tag:</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q17" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) "I understand the instructions," said Alex, "but I still need more time."</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q17" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) "I understand the instructions," said Alex "but I still need more time."</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q17" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) "I understand the instructions." Said Alex, "But I still need more time."</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q17" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) "I understand the instructions," Said Alex, "But I still need more time."</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q18 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">18. Which narrative technique best prevents repetitive dialogue tags like <em>"he said"</em> or <em>"she said"</em>?</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q18" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Removing all quotation marks from speech.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q18" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Replacing tags with character action beats (physical movements/reactions).</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q18" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Capitalizing all spoken words in uppercase.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q18" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Putting exclamation points at the end of every sentence.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q19 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">19. Evaluate this short narrative excerpt: <br>
+              <span class="block bg-slate-100 p-3 rounded font-mono text-xs my-2">
+                "We must hurry," whispered Sarah. "The bus is leaving!"<br>
+                Jackson ran faster. "I am right behind you!"
+              </span>
+            What formatting strength is demonstrated here?</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q19" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Correct paragraphing for new speakers and proper tag punctuation inside quotes.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q19" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Misplaced quotation marks around Sarah's speech phrase.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q19" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Missing commas inside Jackson's exclamation mark.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q19" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) Incorrect capitalization of the dialogue tag "whispered".</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Q20 -->
+          <div class="space-y-3">
+            <p class="font-semibold text-slate-900 text-sm">20. Where should commas and periods be positioned in standard American English dialogue formatting?</p>
+            <div class="space-y-2 text-sm text-slate-700">
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q20" value="A" required class="text-blue-600 focus:ring-blue-500">
+                <span>A) Outside the closing quotation mark always.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q20" value="B" class="text-blue-600 focus:ring-blue-500">
+                <span>B) Inside the closing quotation mark.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q20" value="C" class="text-blue-600 focus:ring-blue-500">
+                <span>C) Only before the opening quotation mark.</span>
+              </label>
+              <label class="flex items-center space-x-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 cursor-pointer">
+                <input type="radio" name="q20" value="D" class="text-blue-600 focus:ring-blue-500">
+                <span>D) After the speaker tag regardless of position.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- SECTION B: NARRATIVE WRITING TASK -->
+          <div class="border-t border-slate-300 pt-8 space-y-4">
+            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-5">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-extrabold text-indigo-900">Section B: Narrative Dialogue Writing Task (5 Points)</h3>
+                <span class="text-xs bg-indigo-200 text-indigo-800 font-bold px-3 py-1 rounded-full">Performance Task</span>
+              </div>
+              <p class="text-xs text-indigo-950 leading-relaxed mb-3">
+                <strong>Prompt:</strong> Write a short dialogue scene (4 to 6 lines / at least 2 speaker exchanges) between two characters who discover a hidden room or confidential document.
+              </p>
+              <div class="bg-white p-3 rounded-lg border border-indigo-100 text-xs space-y-1 text-slate-700">
+                <strong class="text-indigo-900 block mb-1">Mandatory Writing Requirements:</strong>
+                <p>1. Start a new line/paragraph when speaker changes.</p>
+                <p>2. Put all spoken words inside quotation marks with punctuation inside quotes.</p>
+                <p>3. Include at least ONE <strong>abstract noun</strong> (e.g., <em>courage, mystery, fear, silence</em>).</p>
+                <p>4. Include at least ONE <strong>collective noun</strong> (e.g., <em>team, crowd, crew, class</em>).</p>
+                <p>5. Include at least ONE <strong>intensive pronoun</strong> (e.g., <em>himself, herself, myself, ourselves</em>).</p>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-700 mb-2">Write Your Dialogue Scene Below:</label>
+              <textarea id="writing-task-input" rows="6" required class="w-full p-4 border border-slate-300 rounded-xl text-sm font-mono focus:ring-2 focus:ring-blue-500 outline-none" placeholder='"Look behind the bookshelf," whispered Liam, his heart pounding in fear.&#10;&#10;Maya stepped forward and pulled the lever herself. "Our entire team needs to see this hidden entrance."'></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl text-sm transition shadow-md hover:shadow-lg">
+            Submit Complete 25-Point Assessment
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- TAB 5: RESULTS & REPORT CARD -->
+    <section id="section-results" class="hidden space-y-8">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
+        <div class="flex flex-wrap justify-between items-start gap-4 border-b border-slate-200 pb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Official Evaluation Report</span>
+            <h2 class="text-2xl font-extrabold text-slate-900">Student Achievement Summary</h2>
+            <p class="text-xs text-slate-500 mt-1">Grade 9 English Language Arts Standards Assessment</p>
+          </div>
+          <button onclick="window.print()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold flex items-center gap-2">
+            <span>🖨️</span> Print Report Card
+          </button>
+        </div>
+
+        <!-- Student Credentials Banner -->
+        <div id="results-credentials-box" class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200 grid sm:grid-cols-3 gap-4 text-sm">
+          <div>
+            <span class="text-xs text-slate-500 block">Student Name</span>
+            <strong id="res-student-name" class="text-slate-800 text-base">Not Completed</strong>
+          </div>
+          <div>
+            <span class="text-xs text-slate-500 block">Student ID / Class</span>
+            <strong id="res-student-id" class="text-slate-800 text-base">N/A</strong>
+          </div>
+          <div>
+            <span class="text-xs text-slate-500 block">Assessment Date</span>
+            <strong id="res-date" class="text-slate-800 text-base">---</strong>
+          </div>
+        </div>
+
+        <!-- Score Overview Cards -->
+        <div class="grid sm:grid-cols-3 gap-6 mt-6">
+          <div class="p-5 border border-slate-200 rounded-xl bg-blue-50/50 text-center">
+            <span class="text-xs text-blue-600 font-bold uppercase">Final Combined Score</span>
+            <div id="res-score-display" class="text-4xl font-black text-blue-900 mt-2">-- / 25</div>
+            <span id="res-percentage" class="text-xs text-blue-700 font-semibold">0%</span>
+          </div>
+          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50 text-center">
+            <span class="text-xs text-slate-500 font-bold uppercase">Performance Grade</span>
+            <div id="res-letter-grade" class="text-4xl font-black text-slate-700 mt-2">--</div>
+            <span id="res-grade-status" class="text-xs text-slate-500">Pending Quiz</span>
+          </div>
+          <div class="p-5 border border-slate-200 rounded-xl bg-slate-50 text-center">
+            <span class="text-xs text-slate-500 font-bold uppercase">Mastery Level</span>
+            <div id="res-mastery-tag" class="text-base font-bold text-slate-700 mt-3">Needs Assessment</div>
+            <span class="text-xs text-slate-400">Based on standard threshold</span>
+          </div>
+        </div>
+
+        <!-- Detailed Breakdown -->
+        <div class="mt-8">
+          <h3 class="font-bold text-slate-800 mb-4 text-sm">Detailed Learning Outcome Breakdown</h3>
+          <div class="border rounded-xl overflow-hidden text-sm">
+            <table class="w-full text-left border-collapse">
+              <thead class="bg-slate-100 text-slate-600 text-xs uppercase font-semibold">
+                <tr>
+                  <th class="p-3 border-b">Topic Standard</th>
+                  <th class="p-3 border-b">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 text-slate-700">
+                <tr>
+                  <td class="p-3">1.1 Nouns: Singular, Plural, Collective (Q1, Q4, Q5)</td>
+                  <td class="p-3"><span id="topic-1-1" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="p-3">1.2 Nouns: Proper/Common & Concrete/Abstract (Q2, Q3, Q6)</td>
+                  <td class="p-3"><span id="topic-1-2" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="p-3">1.3 Pronouns: Personal, Possessive, Reflexive & Intensive (Q7, Q8, Q11)</td>
+                  <td class="p-3"><span id="topic-1-3" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="p-3">1.4 Pronouns: Relative, Indefinite, Demonstrative & Interrogative (Q9, Q10, Q12, Q13, Q14)</td>
+                  <td class="p-3"><span id="topic-1-4" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="p-3">Narrative Dialogue Mechanics & Paragraphing (Q15, Q16, Q17, Q18, Q19, Q20)</td>
+                  <td class="p-3"><span id="topic-writing" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="p-3">Performance Task: Narrative Dialogue Writing & Application (Section B)</td>
+                  <td class="p-3"><span id="topic-task" class="text-xs px-2 py-1 rounded bg-slate-200 text-slate-600 font-semibold">Pending</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Writing Task Submission Preview on Report Card -->
+        <div id="writing-review-box" class="mt-8 border border-slate-200 rounded-xl p-5 bg-slate-50 hidden">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Submitted Dialogue Performance Task</h4>
+          <blockquote id="writing-review-text" class="text-xs font-mono bg-white p-4 rounded-lg border border-slate-200 whitespace-pre-line text-slate-800">
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-auto">
+    Grade 9 English Interactive Learning Module • Standardized Curriculum Aligned
+  </footer>
+
+  <!-- App Script Logic -->
+  <script>
+    // State management
+    const state = {
+      studentName: '',
+      studentId: '',
+      quizCompleted: false,
+      score: 0,
+      answers: {
+        q1: 'B',
+        q2: 'B',
+        q3: 'C',
+        q4: 'B',
+        q5: 'A',
+        q6: 'C',
+        q7: 'B',
+        q8: 'B',
+        q9: 'B',
+        q10: 'B',
+        q11: 'B',
+        q12: 'B',
+        q13: 'A',
+        q14: 'B',
+        q15: 'C',
+        q16: 'C',
+        q17: 'A',
+        q18: 'B',
+        q19: 'A',
+        q20: 'B'
+      }
+    };
+
+    // Tab Switching Functionality
+    function switchTab(tabId) {
+      const tabs = ['learn', 'practice', 'ccq', 'quiz', 'results'];
+      tabs.forEach(id => {
+        const section = document.getElementById(`section-${id}`);
+        const btn = document.getElementById(`tab-${id}`);
+        if (id === tabId) {
+          section.classList.remove('hidden');
+          btn.classList.add('active');
+        } else {
+          section.classList.add('hidden');
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    // Guided Practice Verification
+    function checkDrill(drillNum, answer, btn) {
+      const feedback = document.getElementById(`drill-${drillNum}-feedback`);
+      const container = document.getElementById(`drill-${drillNum}-options`);
+      const buttons = container.querySelectorAll('button');
+      
+      buttons.forEach(b => {
+        b.classList.remove('bg-emerald-100', 'border-emerald-500', 'bg-red-100', 'border-red-500');
+      });
+
+      feedback.classList.remove('hidden', 'text-emerald-700', 'text-red-700');
+
+      if (
+        (drillNum === 1 && answer === 'orchestra') ||
+        (drillNum === 2 && answer === 'intensive') ||
+        (drillNum === 3 && answer === 'B')
+      ) {
+        btn.classList.add('bg-emerald-100', 'border-emerald-500');
+        feedback.innerText = 'Correct! Great job.';
+        feedback.classList.add('text-emerald-700');
+      } else {
+        btn.classList.add('bg-red-100', 'border-red-500');
+        feedback.innerText = 'Incorrect. Try again!';
+        feedback.classList.add('text-red-700');
+      }
+    }
+
+    // CCQ Answer Reveal Toggle
+    function revealCCQ(id) {
+      const ans = document.getElementById(`ccq-${id}-answer`);
+      ans.classList.toggle('hidden');
+    }
+
+    // Quiz Registration Handler
+    function startQuiz(e) {
+      e.preventDefault();
+      const name = document.getElementById('input-student-name').value.trim();
+      const id = document.getElementById('input-student-id').value.trim();
+
+      if (name && id) {
+        state.studentName = name;
+        state.studentId = id;
+
+        document.getElementById('badge-name').innerText = `${name} (${id})`;
+        document.getElementById('student-badge').classList.remove('hidden');
+        document.getElementById('quiz-active-user').innerText = `${name} (${id})`;
+
+        document.getElementById('quiz-student-form').classList.add('hidden');
+        document.getElementById('quiz-content').classList.remove('hidden');
+      }
+    }
+
+    // Quiz Submission & Scoring
+    function submitQuiz(e) {
+      e.preventDefault();
+      let score = 0;
+      const form = document.getElementById('quiz-form');
+      const formData = new FormData(form);
+
+      // Section A MCQ Scoring
+      const mcqTopics = {
+        'topic-1-1': ['q1', 'q4', 'q5'],
+        'topic-1-2': ['q2', 'q3', 'q6'],
+        'topic-1-3': ['q7', 'q8', 'q11'],
+        'topic-1-4': ['q9', 'q10', 'q12', 'q13', 'q14'],
+        'topic-writing': ['q15', 'q16', 'q17', 'q18', 'q19', 'q20']
+      };
+
+      const topicScores = {};
+
+      for (let q = 1; q <= 20; q++) {
+        const qKey = `q${q}`;
+        const userAns = formData.get(qKey);
+        const correctAns = state.answers[qKey];
+        const isCorrect = (userAns === correctAns);
+
+        if (isCorrect) score++;
+
+        // Track per topic
+        for (let topic in mcqTopics) {
+          if (mcqTopics[topic].includes(qKey)) {
+            if (!topicScores[topic]) topicScores[topic] = { correct: 0, total: 0 };
+            topicScores[topic].total++;
+            if (isCorrect) topicScores[topic].correct++;
+          }
+        }
+      }
+
+      // Section B Writing Task Scoring (Up to 5 points)
+      const writingText = document.getElementById('writing-task-input').value.trim();
+      let writingScore = 0;
+
+      if (writingText.length > 20) writingScore += 1; // Basic length
+      if (writingText.includes('"')) writingScore += 1; // Quotation marks present
+      if (writingText.includes('\n')) writingScore += 1; // Paragraphing / speaker lines
+      if (/courage|fear|mystery|silence|wisdom|truth|hope|honesty/i.test(writingText)) writingScore += 1; // Abstract noun heuristic check
+      if (/himself|herself|myself|ourselves|themselves/i.test(writingText)) writingScore += 1; // Intensive pronoun heuristic check
+
+      score += writingScore;
+
+      // Update Outcome Breakdown Table
+      for (let topic in topicScores) {
+        const elem = document.getElementById(topic);
+        if (elem) {
+          const ratio = topicScores[topic].correct / topicScores[topic].total;
+          if (ratio >= 0.8) {
+            elem.innerText = `Mastered (${topicScores[topic].correct}/${topicScores[topic].total})`;
+            elem.className = 'text-xs px-2 py-1 rounded bg-emerald-100 text-emerald-800 font-semibold';
+          } else {
+            elem.innerText = `Needs Review (${topicScores[topic].correct}/${topicScores[topic].total})`;
+            elem.className = 'text-xs px-2 py-1 rounded bg-amber-100 text-amber-800 font-semibold';
+          }
+        }
+      }
+
+      // Writing Task outcome display
+      const taskElem = document.getElementById('topic-task');
+      if (taskElem) {
+        taskElem.innerText = `Completed (${writingScore}/5 Pts)`;
+        taskElem.className = writingScore >= 3 ? 'text-xs px-2 py-1 rounded bg-emerald-100 text-emerald-800 font-semibold' : 'text-xs px-2 py-1 rounded bg-amber-100 text-amber-800 font-semibold';
+      }
+
+      // Show submitted text on report card
+      document.getElementById('writing-review-box').classList.remove('hidden');
+      document.getElementById('writing-review-text').innerText = writingText;
+
+      state.score = score;
+      state.quizCompleted = true;
+
+      // Update Report Card Overview
+      const totalPossible = 25;
+      const percentage = Math.round((score / totalPossible) * 100);
+      document.getElementById('res-student-name').innerText = state.studentName;
+      document.getElementById('res-student-id').innerText = state.studentId;
+      document.getElementById('res-date').innerText = new Date().toLocaleDateString();
+
+      document.getElementById('res-score-display').innerText = `${score} / ${totalPossible}`;
+      document.getElementById('res-percentage').innerText = `${percentage}% Accuracy`;
+
+      let grade = 'F';
+      let status = 'Unsatisfactory';
+      let mastery = 'Novice';
+
+      if (percentage >= 90) { grade = 'A'; status = 'Excellent Mastery'; mastery = 'Advanced Scholar'; }
+      else if (percentage >= 80) { grade = 'B'; status = 'Proficient'; mastery = 'Competent Practitioner'; }
+      else if (percentage >= 70) { grade = 'C'; status = 'Developing'; mastery = 'Basic Concept Mastery'; }
+      else if (percentage >= 60) { grade = 'D'; status = 'Needs Improvement'; mastery = 'Emerging'; }
+
+      document.getElementById('res-letter-grade').innerText = grade;
+      document.getElementById('res-grade-status').innerText = status;
+      document.getElementById('res-mastery-tag').innerText = mastery;
+
+      // Launch Confetti on high performance
+      if (score >= 20 && typeof confetti === 'function') {
+        confetti({
+          particleCount: 120,
+          spread: 80,
+          origin: { y: 0.6 }
+        });
+      }
+
+      // Switch to results tab
+      switchTab('results');
+    }
+  </script>
+</body>
+</html>
